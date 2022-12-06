@@ -7,4 +7,11 @@
 
 ListNode* middleNode(ListNode* head){
             // head is given inside method.
+            ListNode* slow=head;
+            ListNode* fast=head;
+      while(fast && fast->next){
+            slow=slow->next;
+            fast=fast->next->next;
+      }
+      return slow;
 }
