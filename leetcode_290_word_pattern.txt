@@ -8,7 +8,7 @@ Explanation:a denotes 'geeks' and 'b' denotes 'for'. therefore, sentance's follo
 1. create map to store each word and assign a value to each unique word based on its occurrence.
 2. example: for sentance "geeks for for geeks", the map will be [{"geeks",0},{"for",1}].
 3. similarly map occurrence of each character in the pattern.
-
+//leetcode daily challenge
 
 bool wordPattern(string pattern, string word){
 		map<string, int>mp;
