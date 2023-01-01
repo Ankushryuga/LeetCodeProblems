@@ -1,0 +1,45 @@
+// check if word in given sentance occur based on the given pattern.
+i/p: pattern="abba", s="geeks for for geeks"
+o/p: true;
+Explanation:a denotes 'geeks' and 'b' denotes 'for'. therefore, sentance's follows the pattern.
+
+
+//Approch.
+1. create map to store each word and assign a value to each unique word based on its occurrence.
+2. example: for sentance "geeks for for geeks", the map will be [{"geeks",0},{"for",1}].
+3. similarly map occurrence of each character in the pattern.
+
+
+bool wordPattern(string pattern, string word){
+		map<string, int>mp;
+		int ch=-1;
+		string temp="";
+		string str="", p="";
+		for(int i=0;i<word.length();i++){
+			if(s[i]==' '){
+				if(!temp.empty() && mp.find(temp)==mp.end()){
+					mp.insert({temp,++ch});
+}
+				if(mp.find(temp)!=mp.end()) 
+					str+=((char)((mp.find(temp))->second+'a'));
+				temp="";
+}
+				else
+					temp+=s[i];
+}
+if(!temp.empty() && mp.find(temp)==mp.end())
+	mp.insert({temp, ++ch});
+
+if(mp.find(temp)!=mp.end())
+	str+=((char)((mp.find(temp))->second+'a'));
+
+map<char, int>m;
+ch=-1;
+for(int i=0;i<patter.length();i++){
+	if(m.find(pattern[i])==m.end())
+		m.insert({pattern[i],++ch});
+	if(m.find(patttern[i])!=m.end())
+		p+=((char)((m.find(pattern[i]))->second+'a'));
+}
+return p==str;
+}
