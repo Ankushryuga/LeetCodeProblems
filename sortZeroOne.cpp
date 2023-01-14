@@ -61,6 +61,7 @@ void sortZeroOne(vector<int>&array){
     }
 }
 */
+
 void sortZeroOneTwo(vector<int>&array){
     int countZero=0;
     int countOne=0;
@@ -96,3 +97,8 @@ int main(){
     }
     return 0;
 }
+
+
+
+
+//InPlace sorting 0,1&2...
