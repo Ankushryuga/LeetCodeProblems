@@ -16,3 +16,6 @@ class twoSum{
     return null;
   }
 }
+
+
+// we can optimise the solution using map(unordered)..
