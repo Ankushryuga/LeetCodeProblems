@@ -18,4 +18,12 @@ class twoSum{
 }
 
 
-// we can optimise the solution using map(unordered)..
+// we can optimise the solution using map(unordered).
+
+C++ solution using unordered map and stl feature..
+  
+  vector<int>twosum(vector<int>&nums, int sum){
+  unordered_map<int, int>u_map;
+  
+
+  }
