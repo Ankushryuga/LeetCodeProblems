@@ -1,2 +1,2 @@
 
-// LeetCode problem 10
+// solution of leetcode problem no 10.
