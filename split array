@@ -1,0 +1,42 @@
+/**
+split the array:
+leetcode 410
+*/
+/**
+ * ==> 410: Split array largest sum:
+ * Desc: Given an integer array nums and an integer k, split nums into k non-empty subarrays such that the largest sum of any subarray is minimized.
+ * 
+ * Return the  minimized largest sum of the split.
+ * a subarray is a contiguous part of the array.
+ * 
+ * Example:
+ * nums=[7,2,5,10,8], k=2;
+ * 
+ * 
+*/
+
+#include<iostream>
+#include<vector>
+#include<numeric>
+
+class Solution {
+public:
+    int _helper(std::vector<int>&nums, int i, int j, std::vector<int>&prefix, std::vector<std::vector<int>>DP){
+        if(j==1)
+            return prefix[i];
+        if(DP[i][j]<INT_MAX)
+            return DP[i][j];
+        for(int k=j-1;k<i;++k)
+            DP[i][j]=std::min(DP[i][j], std::max(_helper(nums, k, j-1, prefix, DP), prefix[i]-prefix[k]));
+        return DP[i][j];
+    }
+    
+    //main calcu
+    int splitArray(std::vector<int>& nums, int k) {
+        int n=nums.size();
+        std::vector<std::vector<int>>DP(n+1, std::vector<int>(k+1, INT_MAX));
+        std::vector<int>prefix(n+1);
+        std::partial_sum(nums.begin(), nums.end(), prefix.begin()+1);
+        return _helper(nums, n, k, prefix, DP);
+    }
+};
